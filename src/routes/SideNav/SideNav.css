@@ -1,0 +1,30 @@
+.side {
+    flex: 20%;
+    /* background-color: #bbb8b8; */
+    padding: 20px;
+    height: 100vh;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar li {
+  padding: 10px;
+  width: 100%;
+}
+
+.navbar li:hover {
+    cursor: pointer;
+    background-color: #ddd;
+    color: black;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.active_link {
+  background-color: #ddd;
+  color: #0000AA;
+}
