@@ -16,10 +16,10 @@ class CategoriesStore {
     return this.activeCategory;
   }
 
-  @computed
+ /*  @computed
   get getImages() {
     return this.images;
-  } 
+  }  */
 
   @action
   selectCategory = (categoryId) => {
@@ -71,11 +71,12 @@ class CategoriesStore {
       .then(response => {
         runInAction(() => {
           const { data: imagesData } = response;
-          if (isMore) {
-            this.images = [...this.getImages, ...imagesData];
-          }
-          this.images = [...imagesData]; 
 
+          if (isMore) {
+            this.images = [...this.images, ...imagesData];
+          } else {
+            this.images = [...imagesData]; 
+          }
           this.fetching = false;
         });
       })
