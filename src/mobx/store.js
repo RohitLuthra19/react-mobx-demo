@@ -89,6 +89,6 @@ class CategoriesStore {
   };
 }
 
-const categories = new CategoriesStore();
+const categories = window.store = new CategoriesStore(); //used new to create singleton or single store instance
 
 export default categories;

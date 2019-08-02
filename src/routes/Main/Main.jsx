@@ -7,7 +7,7 @@ import Spinner from '../../components/Spinner/Spinner';
 
 @inject("categories")
 @observer
-class Main extends React.Component {
+class Main extends React.PureComponent {
     render() {
       const { images, fetching } = this.props.categories;
 
@@ -39,9 +39,9 @@ class Main extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-      const { limit, page, activeCategory, getSingleCategory, getActiveCategory } = this.props.categories;
-      console.log(prevProps.categories.activeCategory, activeCategory, getActiveCategory);
-      if (prevProps.categories.activeCategory !== activeCategory) {
+      const { limit, page, activeCategory, getSingleCategory, images } = this.props.categories;
+      if (images.length === 0 && activeCategory !== -1) {
+        console.log(this.props)
         getSingleCategory(activeCategory, limit, page, false);
       }
     }
