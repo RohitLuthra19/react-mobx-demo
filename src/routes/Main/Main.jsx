@@ -1,5 +1,6 @@
 import React from 'react';
 import { inject, observer } from "mobx-react";
+import { toJS } from 'mobx';
 
 import "./Main.css";
 import Spinner from '../../components/Spinner/Spinner';
@@ -39,9 +40,9 @@ class Main extends React.PureComponent {
     }
 
     componentDidUpdate(prevProps) {
-      const { limit, page, activeCategory, getSingleCategory, images } = this.props.categories;
-      if (images.length === 0 && activeCategory !== -1) {
-        console.log('componentDidUpdate', images);
+      const { limit, page, activeCategory, getSingleCategory, images, fetching } = this.props.categories;
+      
+      if (toJS(images).length === 0 && activeCategory !== -1 && !fetching) {
         getSingleCategory(activeCategory, limit, page, false);
       }
     }
