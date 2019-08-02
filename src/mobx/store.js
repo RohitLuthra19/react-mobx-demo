@@ -22,7 +22,7 @@ class CategoriesStore {
   } 
 
   @action
-  selectCategory(categoryId) {
+  selectCategory = (categoryId) => {
     this.activeCategory = categoryId;
     this.images = [];
   }

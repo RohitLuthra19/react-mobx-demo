@@ -41,7 +41,6 @@ class Main extends React.PureComponent {
     componentDidUpdate(prevProps) {
       const { limit, page, activeCategory, getSingleCategory, images } = this.props.categories;
       if (images.length === 0 && activeCategory !== -1) {
-        console.log(this.props)
         getSingleCategory(activeCategory, limit, page, false);
       }
     }

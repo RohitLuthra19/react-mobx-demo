@@ -44,7 +44,7 @@ class SideNav extends React.PureComponent {
     ///////////////////////////////////////////////////////////////////////
     handleSelectCategory = (categoryId) => {
       const { selectCategory } = this.props.categories;
-      selectCategory(categoryId)
+      selectCategory(categoryId);
     }
 }
 
